@@ -9,6 +9,9 @@ Game.destroy_all
 Player.destroy_all
 Card.destroy_all
 
+
+
+
 game1 = Game.create(game_status: "not started" , winner: "None")
 
 p1 = Player.create(name: "Phil")
@@ -25,6 +28,7 @@ for x in (0..9)
 end
 
 allcards = Card.all
+allcards= allcards.shuffle
 allcards= allcards.shuffle
 
   for g in game1.players

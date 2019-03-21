@@ -10,4 +10,8 @@ class GamesController < ApplicationController
     render json: @game
   end
 
+  def update
+    byebug
+  end
+
 end
