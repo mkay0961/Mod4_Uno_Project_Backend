@@ -20,3 +20,12 @@ for x in (0..10)
     Card.create(number: x, color: i)
   end
 end
+Card.all[5].update(player_id: p1.id)
+Card.all[15].update(player_id: p1.id)
+Card.all[20].update(player_id: p1.id)
+Card.all[25].update(player_id: p1.id)
+
+deck1 = Deck.create(game_id: game1.id, card_id: Card.all[17].id )
+deck2 = Deck.create(game_id: game1.id, card_id: Card.all[18].id )
+
+Game.first.update(active_card_id: Card.all[24].id)
