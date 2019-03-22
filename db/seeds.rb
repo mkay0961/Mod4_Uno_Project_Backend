@@ -15,15 +15,20 @@ Card.destroy_all
 game1 = Game.create(game_status: "not started" , winner: "None")
 
 p1 = Player.create(name: "Phil")
-p2 = Player.create(name: "Matt")
+p2 = Player.create(name: "Comp1")
+p3 = Player.create(name: "Comp2")
+p4 = Player.create(name: "Comp3")
 
 GamePlayer.create(game_id: game1.id, player_id: p1.id)
 GamePlayer.create(game_id: game1.id, player_id: p2.id)
+GamePlayer.create(game_id: game1.id, player_id: p3.id)
+GamePlayer.create(game_id: game1.id, player_id: p4.id)
 
-
-for x in (0..9)
-  for i in ["red","yellow","green", "blue"]
-    Card.create(number: x, color: i)
+2.times do
+  for x in (0..9)
+    for i in ["red","yellow","green", "blue"]
+      Card.create(number: x, color: i)
+    end
   end
 end
 
