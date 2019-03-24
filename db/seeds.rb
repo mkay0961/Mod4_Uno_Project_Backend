@@ -24,13 +24,33 @@ GamePlayer.create(game_id: game1.id, player_id: p2.id)
 GamePlayer.create(game_id: game1.id, player_id: p3.id)
 GamePlayer.create(game_id: game1.id, player_id: p4.id)
 
-2.times do
+
   for x in (0..9)
     for i in ["red","yellow","green", "blue"]
       Card.create(number: x, color: i)
     end
   end
-end
+
+  for x in (1..9)
+    for i in ["red","yellow","green", "blue"]
+      Card.create(number: x, color: i)
+    end
+  end
+
+  2.times do
+    for x in ["draw2", "reverse", "skip"]
+      for i in ["red","yellow","green", "blue"]
+        Card.create(number: x, color: i)
+      end
+    end
+
+
+    for x in["color", "draw4"]
+      for i in ["wild", "wild"]
+           Card.create(number: x, color: i)
+      end
+    end
+  end
 
 
 allcards = Card.all
