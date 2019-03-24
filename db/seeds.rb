@@ -32,15 +32,16 @@ GamePlayer.create(game_id: game1.id, player_id: p4.id)
   end
 end
 
+
 allcards = Card.all
 allcards= allcards.shuffle
 allcards= allcards.shuffle
 
+  puts allcards.count
   for g in game1.players
     for i in (0..4)
-      allcards[i].update(player_id: g.id)
-      puts allcards[i].number
-      allcards.shift()
+      card = allcards.shift()
+      PlayerCard.create(player_id: g.id,card_id: card.id)
     end
     puts "---"
   end
