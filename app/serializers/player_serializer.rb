@@ -3,8 +3,8 @@ class PlayerSerializer < ActiveModel::Serializer
   def cards
     self.object.cards.map{|card|
       obj = {}
-      obj["Number"] = card.number
-      obj["Color"] = card.color
+      obj["number"] = card.number
+      obj["color"] = card.color
       obj
      }
   end

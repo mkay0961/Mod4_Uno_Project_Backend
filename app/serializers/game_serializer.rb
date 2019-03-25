@@ -6,8 +6,8 @@ class GameSerializer < ActiveModel::Serializer
     card = Card.find(self.object.active_card_id)
 
     {
-     Number: card.number,
-     Color: card.color
+     number: card.number,
+     color: card.color
     }
 
   end
@@ -16,8 +16,8 @@ class GameSerializer < ActiveModel::Serializer
     self.object.deck.map{|card|
       card = Card.find(card.card_id)
       obj = {}
-      obj["Number"] = card.number
-      obj["Color"] = card.color
+      obj["number"] = card.number
+      obj["color"] = card.color
       obj
     }
   end

@@ -15,13 +15,13 @@ class GamesController < ApplicationController
     puts "+++++++++++++++++++++++++"
     puts @game.id
     puts "+++++++++++++++++++++++++"
-    @active = Card.find_by(number: params["active_card"]["Number"], color:params["active_card"]["Color"])
+    @active = Card.find_by(number: params["active_card"]["number"], color:params["active_card"]["color"])
     @game.update(game_status: params["game_status"], winner: params["winner"], active_card_id: @active.id)
 
 
     Deck.where(game_id: @game.id).destroy_all
     params["deck"].each_with_index{|deck|
-      g = Card.find_by(number:deck["Number"],color:deck["Color"])
+      g = Card.find_by(number:deck["number"],color:deck["color"])
       Deck.create(game_id: @game.id, card_id: g.id )
     }
 
@@ -40,7 +40,7 @@ class GamesController < ApplicationController
     params["players"].each_with_index{|player, inx|
       p = Player.find_by(name: player["name"])
       player["cards"].each_with_index{|card,x|
-        g = Card.find_by(number:card["Number"],color:card["Color"])
+        g = Card.find_by(number:card["number"],color:card["color"])
         l= PlayerCard.create(player_id: p.id,card_id: g.id)
        }
     }
