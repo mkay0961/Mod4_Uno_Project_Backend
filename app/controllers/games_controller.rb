@@ -14,6 +14,7 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
     puts "+++++++++++++++++++++++++"
     puts @game.id
+    puts params["active_card"]
     puts "+++++++++++++++++++++++++"
     @active = Card.find_by(number: params["active_card"]["number"], color:params["active_card"]["color"])
     @game.update(game_status: params["game_status"], winner: params["winner"], active_card_id: @active.id)
