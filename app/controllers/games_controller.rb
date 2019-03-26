@@ -14,6 +14,10 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
     @game.update(game_status: params["game_status"], winner:params["winner"])
     @game.cards.each_with_index{|card,x|
+      puts"++"
+      puts params["cards"][x]
+      puts card.number
+      puts "+++"
       newPos = params["cards"][x]["game_position"]
       card.update(game_position: newPos )
     }
