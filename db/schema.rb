@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2019_03_21_152513) do
   create_table "cards", force: :cascade do |t|
     t.string "number"
     t.string "color"
-    t.integer "game_position"
+    t.integer "game_position", default: 5
     t.integer "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
