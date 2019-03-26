@@ -20,6 +20,12 @@ class GamesController < ApplicationController
     render json: @game
   end
 
+  def destroy
+    @game = Game.find(params[:id])
+    @game.destroy
+    render json: Game.all
+  end
+
   def create
     game = Game.newGame(params["name"])
     render json: game
