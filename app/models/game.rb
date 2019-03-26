@@ -5,7 +5,7 @@ class Game < ApplicationRecord
 
   def self.newGame(name)
 
-    game1 = Game.create(game_status: "not started" , winner: "None")
+    game1 = Game.create(game_status: "Pending" , winner: "None")
 
     p1 = Player.find_or_create_by(name: name)
     p2 = Player.find_or_create_by(name: "Comp1")
