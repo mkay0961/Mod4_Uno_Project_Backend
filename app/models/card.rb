@@ -1,4 +1,3 @@
 class Card < ApplicationRecord
-  belongs_to :deck, optional: true
-  has_many :player_cards
+  belongs_to :game
 end

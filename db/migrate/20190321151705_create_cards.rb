@@ -3,7 +3,8 @@ class CreateCards < ActiveRecord::Migration[5.2]
     create_table :cards do |t|
       t.string :number
       t.string :color
-      t.integer :player_id
+      t.integer :game_position
+      t.integer :game_id
 
       t.timestamps
     end

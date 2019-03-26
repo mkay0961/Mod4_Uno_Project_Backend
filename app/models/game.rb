@@ -1,7 +1,7 @@
 class Game < ApplicationRecord
   has_many :game_players
   has_many :players, through: :game_players
-  has_many :deck
+  has_many :cards
 
   def self.newGame(name)
     game1 = Game.create(game_status: "not started" , winner: "None")

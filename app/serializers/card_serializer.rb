@@ -1,3 +1,3 @@
 class CardSerializer < ActiveModel::Serializer
-  attributes :id, :number, :color
+  attributes :number, :color, :game_position
 end
